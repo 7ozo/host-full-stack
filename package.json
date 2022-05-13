@@ -4,9 +4,12 @@
         "front-end:install":"cd udagram-frontend && npm install",
         "front-end:build":"cd udagram-frontend && npm run build",
         "front-end:deploy":"cd udagram-frontend && npm run deploy",
+        "front-end:test":"cd udagram-frontend && npm run test",
+        "frontend:e2e": "cd udagram-frontend && npm run e2e",
         "back-end:install":"cd udagram-api && npm install",
         "back-end:build":"cd udagram-api && npm run build",
-        "back-end:deploy":"cd udagram-api && npm run deploy"
+        "back-end:deploy":"cd udagram-api && npm run deploy",
+        "back-end:test":"cd udagram-api && npm run test"
     },
     "devDependencies": {}
 }
