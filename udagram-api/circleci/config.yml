@@ -1,0 +1,43 @@
+version: 2.1
+orbs:
+  node: circleci/node@5.0.2
+  aws-cli: circleci/aws-cli@1.3.1
+  eb: circleci/aws-elastic-beanstalk@2.0.0
+jobs:
+  frontend:
+    executor: node/default
+    steps:
+      - node/install
+      - aws-cli/install
+      - checkout
+      - run:
+          name: install Frontend dependencies
+          command: npm run front-end:install
+      - run:
+          name: build Frontend
+          command: npm run front-end:build
+      - run:
+          name: deploy Frontend
+          command: npm run front-end:deploy
+
+  backend:
+    executor: node/default
+    steps:
+      - node/install
+      - eb/setup
+      - checkout
+      - run:
+          name: install backend dependencies
+          command: npm run back-end:install
+      - run:
+          name: build backend
+          command: npm run back-end:build
+      - run:
+          name: deploy backend
+          command: npm run back-end:deploy
+
+workflows:
+  build_and_deploy:
+    jobs:
+      - frontend
+      - backend
