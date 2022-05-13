@@ -18,7 +18,7 @@
 
 - http://velpar-udagram.s3-website-us-east-1.amazonaws.com/
 
-use the link above to visit the porject 
+use the link above to visit the project 
 
 
 ![diagram](/docs/screenshots/infrastructure.png)
